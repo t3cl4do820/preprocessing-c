@@ -37,15 +37,28 @@ int main(int argc, char *argv[])
 	buffer[bytes] = '\0';
 
 	char *token = strtok(buffer, " \n");
+	char *content = malloc(size_file + 1);
+
+	if (content == NULL) {
+		free(buffer);
+		fclose(file);
+		return -1;
+	}
+
+	content[0] = '\0';
 
 	while (token != NULL) {
 		printf("Token: %s \n", token);
+		strcat(content, token);
 		token = strtok(NULL, " \n");
 	}
-	fclose(file);
-	free(buffer);
+
+	printf("%s \n", content);
 
 	printf("File: %s | Bytes: %ld \n", _file_name, size_file);
 
+	free(content);
+	fclose(file);
+	free(buffer);
 	return 0;
 }
