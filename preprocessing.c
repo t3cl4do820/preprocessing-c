@@ -49,9 +49,18 @@ int main(int argc, char *argv[])
 
 	while (token != NULL) {
 		printf("Token: %s \n", token);
+		if (strcmp(token, "#include") == 0) { /* remove the #include token */
+			token = strtok(NULL, " \n");
+			continue;
+		}
 		strcat(content, token);
 		token = strtok(NULL, " \n");
 	}
+
+	/* remove the <.h> chars and add .h file content in _file_name */
+
+		
+
 
 	printf("%s \n", content);
 
