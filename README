@@ -1,0 +1,8 @@
+how to use
+----------
+
+write a file thet contains some headers like ncurses.h termios.h (only headers inside include/)
+
+run 'make' and then ./preprocessing <name file>
+
+the #include directives in your file will be replaced with include/termios.h content (for example)

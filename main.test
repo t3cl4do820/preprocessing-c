@@ -1,5 +1,5 @@
-#include <termios.h>
 #include <ncurses.h>
-#include <sys.h>
 #include <programadores_br.h>
 #include <stdio.h>
+#include <sys.h>
+#include <termios.h>
